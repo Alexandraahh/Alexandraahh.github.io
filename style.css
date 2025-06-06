@@ -1,0 +1,134 @@
+/* Fonte estilo retro 8-bit */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Estilo base do corpo da página */
+body {
+  margin: 0;
+  background-color: #111; /* fundo escuro */
+  color: #d0d19a;          /* texto verde suave */
+  font-family: 'Press Start 2P', monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilo geral para as barras superior e inferior */
+.border {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 45px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+/* Barra de topo: cor rosa */
+.top-border {
+  background-color: #e29da5;
+  color: #111;
+}
+
+/* Barra de fundo: cor verde */
+.bottom-border {
+  background-color: #c5cb83;
+  color: #111;
+}
+
+/* Área de contenção do texto rolante */
+.scroll-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Linha de texto em movimento (ambas as barras usam esta base) */
+.scroll-text {
+  display: flex;
+  white-space: nowrap;
+}
+
+/* Cada parte do texto repetido */
+.scroll-text span {
+  padding: 0 20px;
+}
+
+/* Animação para mover da esquerda para a direita */
+.left-to-right {
+  animation: scroll-right-loop 20s linear infinite;
+}
+
+/* Animação para mover da direita para a esquerda */
+.right-to-left {
+  animation: scroll-left-loop 20s linear infinite;
+}
+
+/* Keyframe: move da metade esquerda para o centro (loop contínuo) */
+@keyframes scroll-right-loop {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* Keyframe: move do centro para a metade esquerda (loop contínuo) */
+@keyframes scroll-left-loop {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Estilo do conteúdo central da página */
+.content {
+  width: 100%;
+  max-width: 1000px;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
+}
+
+/* Nome em destaque */
+.name {
+  font-size: 24px;
+  color: #d0d19a;
+  margin-bottom: 60px;
+}
+
+/* Menu principal */
+.menu {
+  margin-bottom: 50px;
+}
+
+/* Links do menu */
+.link {
+  display: block;
+  font-size: 16px;
+  color: #e29da5;
+  text-decoration: none;
+  margin: 20px 0;
+}
+
+/* Link em destaque (WORK) */
+.link.highlight {
+  color: #c5cb83;
+  font-size: 30px;
+}
+
+/* Lista de skills */
+.skills ul {
+  list-style: none;
+  padding: 0;
+  font-size: 12px;
+  color: #e29da5;
+  text-align: left;
+  display: inline-block;
+  margin-top: 40px;
+}
+
